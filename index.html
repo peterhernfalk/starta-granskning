@@ -17,9 +17,12 @@ var domain = "riv.clinicalprocess.activity.request"
 var tag = "1.0.2"
 </script>
 
-<form action="" method="GET">
-<select size="3">
+<form id= "domainform" action="" method="GET">
+<select id="domain_name_list">
 <option>riv.clinicalprocess.activity.request
+</select>
+<select id="domain_tag_list">
+<option>1.0.2
 </select>
 <!--INPUT Value="Check Item" onClick"testItem(this.Form)"-->
 </form>
@@ -29,6 +32,7 @@ var tag = "1.0.2"
 <script>
 function startIgranskning() {
     //alert("Item "+form.mylist.selectedIndex+" is selected");
+    //alert(domainform.domain_name_list);
     var domain = "riv.clinicalprocess.activity.request"
     var tag = "1.0.2"
     var service_domain = "https://i-granskning.herokuapp.com"
@@ -37,9 +41,12 @@ function startIgranskning() {
     window.open(service_domain+service+parameters);
 }
 function startTgranskning() {
-  var service_domain = "https://t-granskning.herokuapp.com"
-  var parameters = "/granskningsinfo?domain=riv.clinicalprocess.activity.request&tag=1.0.2"
-  window.open(service_domain+parameters);
+    var domain = "riv.clinicalprocess.activity.request"
+    var tag = "1.0.2"
+    var service_domain = "https://t-granskning.herokuapp.com"
+    var service = "/granskningsinfo"
+    var parameters = "?domain=" + domain + "&tag=" + tag
+    window.open(service_domain+service+parameters);
 }
 </script>
 </body>
