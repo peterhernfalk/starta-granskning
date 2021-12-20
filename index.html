@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--meta http-equiv="refresh" content="0; URL=http://www.villaagarna.se/storskrakenslunnefagelns" /-->
+    <title>Starta grankning</title>
+</head>
+<body>
+<h1>Starta VITS-granskningstjänst</h1>
+<br>Välj tjänstedomän och sedan den version som ska granskas. Starta därefter I- eller T-granskning
+<br><br>
+<SCRIPT>
+function testItem(form) {
+alert("Item "+form.mylist.selectedIndex+" is selected");
+}
+</SCRIPT>
+
+<FORM ACTION="" METHOD="GET">
+<SELECT SIZE="3">
+<OPTION>riv.clinicalprocess.activity.request
+</SELECT>
+<!--INPUT Value="Check Item" onClick"testItem(this.Form)"-->
+</FORM>
+<br><br>
+<button onclick="startIgranskning()">I-granskning</button>
+<button onclick="startTgranskning()">T-granskning</button>
+<script>
+function startIgranskning() {
+  alert("Item "+form.mylist.selectedIndex+" is selected");
+  var service_domain = "https://i-granskning.herokuapp.com"
+  var parameters = "/granskningsinfo?domain=riv.clinicalprocess.activity.request&tag=1.0.2"
+  window.open(service_domain+parameters);
+}
+function startTgranskning() {
+  var service_domain = "https://t-granskning.herokuapp.com"
+  var parameters = "/granskningsinfo?domain=riv.clinicalprocess.activity.request&tag=1.0.2"
+  window.open(service_domain+parameters);
+}
+</script>
+</body>
+</html>
