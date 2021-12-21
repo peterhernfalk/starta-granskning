@@ -2,13 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--meta http-equiv="refresh" content="0; URL=http://www.villaagarna.se/storskrakenslunnefagelns" /-->
-    <title>Starta grankning</title>
+    <title>Starta VITS-granskningstjänst</title>
+
+    <script src="javascript/behaviour.js"></script>
+    <script src="javascript/communication.js"></script>
 </head>
 <body>
 <h1>Starta VITS-granskningstjänst</h1>
-<br>Välj tjänstedomän och sedan den version som ska granskas. Starta därefter I- eller T-granskning
+
+<form id= "domainform" action="" method="GET">
+<div id="select_domain">
+    <br><h2>1. Välj tjänstedomän</h2>
+    <select id="domain_name_list" onchange="initDomainTagList();" onfocus="this.selectedIndex = -1;">
+    </select>
+</div>
+
+<div id="select_version" onchange="document.getElementById('start_service').style.display = 'block'";>
+    <br><br><h2>2. Välj domänversion</h2>
+<select id="domain_tag_list">
+</select>
+</div>
+</form>
+
 <br><br>
+<div id="start_service">
+    <h2>3. Starta önskad granskningstjänst</h2>
+<button onclick="startIgranskning()">I-granskning</button>
+<button onclick="startTgranskning()">T-granskning</button>
+</div>
 
 <script>
     var i_service_domain = "https://i-granskning.herokuapp.com"
@@ -16,36 +37,13 @@
 
     var t_service_domain = "https://t-granskning.herokuapp.com"
     var t_service = "/granskningsinfo"
+
+    document.getElementById("select_version").style.display = "none";
+    document.getElementById("start_service").style.display = "none";
+
+    initDomainNameList();
+
 </script>
 
-<form id= "domainform" action="" method="GET">
-<select id="domain_name_list">
-<option>riv.clinicalprocess.activity.request
-</select>
-
-<select id="domain_tag_list">
-<option>1.0.2
-</select>
-</form>
-
-<br><br>
-<button onclick="startIgranskning()">I-granskning</button>
-<button onclick="startTgranskning()">T-granskning</button>
-
-<script>
-function startIgranskning() {
-    //alert(domainform.domain_name_list);
-    var domain = "riv.clinicalprocess.activity.request"
-    var tag = "1.0.2"
-    var parameters = "?domain=" + domain + "&tag=" + tag
-    window.open(i_service_domain+i_service+parameters);
-}
-function startTgranskning() {
-    var domain = "riv.clinicalprocess.activity.request"
-    var tag = "1.0.2"
-    var parameters = "?domain=" + domain + "&tag=" + tag
-    window.open(t_service_domain+t_service+parameters);
-}
-</script>
 </body>
 </html>
