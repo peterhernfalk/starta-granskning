@@ -1,8 +1,12 @@
 
-    funtion fetchDomainNameList() {
+    function fetchDomainNameList() {
+        const domainNames = [];
+        domainNames[0] = "riv.clinicalprocess.activity.request";
+        domainNames[1] = "clinicalprocess.healthcond.certificate";
+        return domainNames;
     }
 
-    funtion fetchDomainTagList() {
+    function fetchDomainTagList() {
     }
 
 /*
