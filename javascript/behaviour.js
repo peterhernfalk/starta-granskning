@@ -8,6 +8,7 @@ function initDomainNameList() {
     domain_2 = "clinicalprocess.healthcond.certificate";
 
     var select = document.getElementById('domain_name_list');
+    select.innerHTML = "";
     var el1=document.createElement('option');
 
     el1.textContent = domain_1;
@@ -28,6 +29,7 @@ function initDomainTagList() {
     tag_2 = "4.0.5";
 
     var select = document.getElementById('domain_tag_list');
+    select.innerHTML = "";
     var el1=document.createElement('option');
 
     el1.textContent = tag_1;
