@@ -2,11 +2,18 @@
     function fetchDomainNameList() {
         const domainNames = [];
         domainNames[0] = "riv.clinicalprocess.activity.request";
-        domainNames[1] = "clinicalprocess.healthcond.certificate";
+        domainNames[1] = "riv.clinicalprocess.healthcond.certificate";
         return domainNames;
     }
 
-    function fetchDomainTagList() {
+    function fetchDomainTagList(domainName) {
+        const domainTags = [];
+        if (domainName == "riv.clinicalprocess.activity.request") {
+            domainTags[0] = "1.0.2";
+        } else if (domainName == "riv.clinicalprocess.healthcond.certificate") {
+            domainTags[0] = "4.0.5";
+        }
+        return domainTags;
     }
 
 /*

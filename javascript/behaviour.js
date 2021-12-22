@@ -7,48 +7,28 @@ function initDomainNameList() {
     select.innerHTML = "";
 
     var domains = fetchDomainNameList();
-    //domain_1 = "riv.clinicalprocess.activity.request";
-    //domain_2 = "clinicalprocess.healthcond.certificate";
-
     for (let i = 0; i < domains.length; i++) {
-        var el=document.createElement('option');
-        el.textContent = domains[i];
-        el.value = domains[i];
-        select.appendChild(el);
+        var option_element = document.createElement('option');
+        option_element.textContent = domains[i];
+        option_element.value = domains[i];
+        select.appendChild(option_element);
     }
-
-
-    /*var el1=document.createElement('option');
-    el1.textContent = domain_1;
-    el1.value = domain_1;
-    select.appendChild(el1);
-    var el2=document.createElement('option');
-    el2.textContent = domain_2;
-    el2.value = domain_2;
-    select.appendChild(el2);*/
-
-    //alert(domains.length);
 }
 
 function initDomainTagList() {
     document.getElementById("start_service").style.display = "none";
 
-    //fetchDomainTagList();
-
-    tag_1 = "1.0.2";
-    tag_2 = "4.0.5";
-
     var select = document.getElementById('domain_tag_list');
     select.innerHTML = "";
-    var el1=document.createElement('option');
 
-    el1.textContent = tag_1;
-    el1.value = tag_1;
-    select.appendChild(el1);
-    var el2=document.createElement('option');
-    el2.textContent = tag_2;
-    el2.value = tag_2;
-    select.appendChild(el2);
+    var domain = String(document.getElementById('domain_name_list').value);
+    var tags = fetchDomainTagList(domain);
+    for (let i = 0; i < tags.length; i++) {
+        var option_element = document.createElement('option');
+        option_element.textContent = tags[i];
+        option_element.value = tags[i];
+        select.appendChild(option_element);
+    }
 
     document.getElementById("select_version").style.display = "block";
 }
