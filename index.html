@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1>Starta VITS-granskningstjänst</h1>
+<br>FÖr närvarande fungerar tjänsten enbart för <b>riv.clinicalprocess.activity.request</b> och <b>riv.clinicalprocess.healthcond.certificate</b>
 
 <form id= "domainform" action="" method="GET">
 <div id="select_domain">
@@ -41,8 +42,17 @@
     document.getElementById("select_version").style.display = "none";
     document.getElementById("start_service").style.display = "none";
 
-    initDomainNameList();
 
+    var repo_listing_page_contents = "";
+    var domainListPageString = "";
+    domainNames = [];
+    fetchedData = "";
+
+    initDomainNameList();
+    //domainListPageString = initDomainNameList();
+    //console.log("index.html, domainListPageString:\n" + domainListPageString);
+    //console.log("index.html, fetchedData: " + fetchedData + "  " + fetchedData.length);
+    console.log("index.html, domainNames:\n" + domainNames + "  " + domainNames.length);
 </script>
 
 </body>

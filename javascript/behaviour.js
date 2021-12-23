@@ -1,16 +1,27 @@
 
-function initDomainNameList() {
+async function initDomainNameList() {
     document.getElementById("select_version").style.display = "none";
     document.getElementById("start_service").style.display = "none";
 
     var select = document.getElementById('domain_name_list');
     select.innerHTML = "";
 
-    var domains = fetchDomainNameList();
-    for (let i = 0; i < domains.length; i++) {
+    var repo_listing = "https://api.bitbucket.org/2.0/repositories/rivta-domains/?pagelen=100&max_depth=10&sort=name"
+
+    const response = await fetch(repo_listing);
+    const rivta_domains = await response.json();
+    console.log("rivta_domains:");
+    console.log(rivta_domains);
+    for (let i = 0; i < rivta_domains.values.length; i++) {
+        if (rivta_domains.values[i].name.startsWith("riv") == true) {
+            jsonAdd2domainNames(rivta_domains.values[i].name);
+        }
+    }
+
+    for (let i = 0; i < domainNames.length; i++) {
         var option_element = document.createElement('option');
-        option_element.textContent = domains[i];
-        option_element.value = domains[i];
+        option_element.textContent = domainNames[i];
+        option_element.value = domainNames[i];
         select.appendChild(option_element);
     }
 }
