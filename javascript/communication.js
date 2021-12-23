@@ -1,6 +1,6 @@
 
 
-    async function fetchDomainNameList() {
+    /*async function fetchDomainNameList() {
 
         //--- Hard coded values
         domainNames[0] = "riv.clinicalprocess.activity.request";
@@ -8,64 +8,24 @@
 
         //--- 2do: Fetch domain names from Bitbucket
         //Source: https://bitbucket.org/rivta-domains/
-        //var link_2_repo_listing = "https://api.bitbucket.org/2.0/repositories/rivta-domains/"+domain_name+"/src/"+domain_hash_in_repo+"/?pagelen=100&max_depth=10&tag="+tag
         var repo_listing = "https://api.bitbucket.org/2.0/repositories/rivta-domains/?pagelen=100&max_depth=10"
-
-        //repo_listing_page_contents = getPageText(repo_listing);
-
-        /*fetch(repo_listing)
-        .then(response => response.text())
-        .then(data => {
-  	    //console.log("data:\n" + data + " " + data.length);
-  	    //domainNames.push(data.substring(216,249));
-  	    domainNames = add2domainNames(data.substring(216,249));
-  	    domainNames = add2domainNames(data.substring(316,349));
-  	    //console.log(data.substring(1,16));
-  	    //console.log("inside fetch, domainNames: " + domainNames + "  " + domainNames.length);
-        }
-        );*/
-
-        /*fetch(repo_listing)
-        .then(response => response.json())
-        .then(data => {
-            storeFetchedData(data);
-            console.log(data);
-            add2domainNames("domain-1");
-            add2domainNames("domain-2");
-        }
-        );*/
 
         let response = await fetch(repo_listing);
         let data = await response.text();
   	    domainNames = add2domainNames(data.substring(216,249));
   	    domainNames = add2domainNames(data.substring(316,349));
 
-  	    //console.log("outside of fetch, fetchedData: " + fetchedData + "  " + fetchedData.length);
-  	    console.log("outside of fetch, domainNames: " + domainNames + "  " + domainNames.length);
-
-        //console.log("fetchDomainNameList.domainListPageString: " + domainListPageString);
-        //console.log("fetchDomainNameList.fetchedData: " + fetchedData);
-        //console.log("fetchDomainNameList.domainNames: " + domainNames + " " + domainNames.length);
-
-        //repo_listing_page_contents = fetch("https://URL/file").then((r)=>{r.text().then((d)=>{let CONTENT = d})});
-        //console.log(repo_listing_page_contents.CONTENT);
-        //alert(page_contents);
-        //alert(String(page_contents));
-        //alert(repo_listing);
-        // Python code: downloaded_requests_get = requests.get(repo_listing, stream=True)
-
         return domainNames;
-    }
+    }*/
 
-    function storeFetchedData(data) {
+    /*function storeFetchedData(data) {
         fetchedData = data;
-    }
+    }*/
 
-    function add2domainNames(domainName) {
+    /*function add2domainNames(domainName) {
         domainNames.push(domainName);
-  	    console.log("add2domainNames, domainNames: " + domainNames + "  " + domainNames.length);
   	    return domainNames;
-    }
+    }*/
 
     function jsonAdd2domainNames(domainName) {
         domainNames.push(domainName);
