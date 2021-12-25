@@ -27,37 +27,12 @@
   	    return domainNames;
     }*/
 
-    function jsonAdd2domainNames(domainName) {
-        domainNames.push(domainName);
-  	    //console.log("add2domainNames, domainNames: " + domainNames + "  " + domainNames.length);
-  	    //console.log("jsonAdd2domainNames, json_data: " + json_data + "  " + json_data.length);
-    }
-
     /*function storedomainListPageString(pageContents) {
         domainListPageString = page_contents;
     }*/
 
-    function fetchDomainTagList(domainName) {
-        const domainTags = [];
 
-        //--- Hard coded values
-        if (domainName == "riv.clinicalprocess.activity.request") {
-            domainTags[0] = "1.0.2";
-        } else if (domainName == "riv.clinicalprocess.healthcond.certificate") {
-            domainTags[0] = "4.0.5";
-        }
-
-        //--- 2do: Fetch domain names from Bitbucket
-        //Source: tags in dropdown list in a commit page for a domain, such as: https://bitbucket.org/rivta-domains/riv.clinicalprocess.healthcond.description/commits/
-        //Better source: find "/tags/" in https://api.bitbucket.org/2.0/repositories/rivta-domains/riv.itintegration.engagementindex/refs/tags
-        // The page link is derived from https://api.bitbucket.org/2.0/repositories/rivta-domains/?pagelen=100&max_depth=10
-        // search for: "tags": {"href": and open link
-        // Search for: "commits": {"href": which will find all tags
-
-        return domainTags;
-    }
-
-    function getPageText(page_url) {
+    /*function getPageText(page_url) {
         var request = new XMLHttpRequest();
         //request.open('GET', 'http://www.xxxxx.com/pocket.txt', true);
         request.open('GET', page_url, true);
@@ -81,7 +56,7 @@
         //page_content_string = String(request.responseText);
         console.log("return page_content_string:\n" + page_content_string);
         return page_content_string;
-    }
+    }*/
 
 /*
     function getNodeUrl(botId) {

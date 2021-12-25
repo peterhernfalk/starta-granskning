@@ -9,21 +9,22 @@
 </head>
 <body>
 <h1>Starta VITS-granskningstjänst</h1>
-<br>För närvarande fungerar tjänsten enbart för:
-<br><b>riv.clinicalprocess.activity.request</b>, version 1.0.2 och
-<br><b>riv.clinicalprocess.healthcond.certificate</b>, version 4.0.5
+<br>För närvarande <b>fungerar tjänsten</b> för många domäner.
+<br>Det <b>återstår att utreda</b> vilka domänversioner som inte fungerar än
+<br><br>Det <b>återstår även</b> att förbättra tjänstens layout och komplettera med information som underlättar användandet
 
 <form id= "domainform" action="" method="GET">
 <div id="select_domain">
     <br><h2>1. Välj tjänstedomän</h2>
-    <select id="domain_name_list" onchange="initDomainTagList();" onfocus="initDomainTagList(); this.selectedIndex = -1;">
+    <!--select id="domain_name_list" onchange="initDomainTagList();" onfocus="initDomainTagList(); this.selectedIndex = -1;"-->
+    <select id="domain_name_list" onchange="initDomainTagList();" onfocus="this.selectedIndex = -1;">
     </select>
 </div>
 
 <div id="select_version" onclick="document.getElementById('start_service').style.display = 'block'";>
     <br><br><h2>2. Välj domänversion</h2>
-<select id="domain_tag_list">
-</select>
+    <select id="domain_tag_list">
+    </select>
 </div>
 </form>
 
@@ -49,6 +50,8 @@
     var domainListPageString = "";
     domainNames = [];
     fetchedData = "";
+    domainTags = [];
+    domain_tag_dictionary = {};
 
     initDomainNameList();
     //domainListPageString = initDomainNameList();
