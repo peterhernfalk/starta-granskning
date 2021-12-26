@@ -8,6 +8,7 @@ Det åstadkoms främst genom att domännamn och domänversion väljs från listb
 - Denna tjänst är utvecklad i HTML, Javascript och (snart även) CSS
 - Listboxen med domännamn populeras genom att Javascriptkod hämtar innehållet från rivta-domains på Bitbucket
 - Listboxen med domänversioner populeras genom att Javascriptkod hämtar vald domäns befintliga taggar från domänens repo i Bitbucket
+- Start av I- eller T-granskningstjänsten sker gfrån de respektive knappar som visas när både domän och version (tagg) är valda
 
 ### Hämtning av listor med domännamn respektive taggnamn
 - Javascriptfunktionen initDomainNameList() hämtar domännamn och fyller comboboxlistan med dem

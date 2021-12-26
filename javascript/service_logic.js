@@ -2,57 +2,47 @@
 async function initDomainNameList() {
     document.getElementById("select_version").style.display = "none";
     document.getElementById("start_service").style.display = "none";
-
     var select = document.getElementById('domain_name_list');
-    select.innerHTML = "";
 
     var repo_listing = "https://api.bitbucket.org/2.0/repositories/rivta-domains/?pagelen=100&max_depth=10&sort=name"
     const response = await fetch(repo_listing);
     const rivta_domains = await response.json();
 
-    domainNames.push("");
+    add2ListElement(select, "")
     for (let i = 0; i < rivta_domains.values.length; i++) {
         if (rivta_domains.values[i].name.startsWith("riv") == true) {
-            domainNames.push(rivta_domains.values[i].name);
+            add2ListElement(select, rivta_domains.values[i].name)
             domain_tag_dictionary[ rivta_domains.values[i].name ] = rivta_domains.values[i].links.tags.href;
         }
-    }
-
-    for (let i = 0; i < domainNames.length; i++) {
-        var option_element = document.createElement('option');
-        option_element.textContent = domainNames[i];
-        option_element.value = domainNames[i];
-        select.appendChild(option_element);
     }
 }
 
 async function initDomainTagList() {
     document.getElementById("start_service").style.display = "none";
-
     var select = document.getElementById("domain_tag_list");
 
     var repo_listing_tags = domain_tag_dictionary[document.getElementById('domain_name_list').value]+"?pagelen=100&max_depth=10&sort=-name";
-
     const response = await fetch(repo_listing_tags);
     const domain_tags = await response.json();
 
-    domainTags.length = 0;
+    domain_tags.length = 0;
     while (select.length > 0) {
         select.removeChild(select.childNodes[0]);
     }
 
-    domainTags.push("");
+    add2ListElement(select, "")
     for (let i = 0; i < domain_tags.values.length; i++) {
-        domainTags.push(domain_tags.values[i].name);
-    }
-    for (let i = 0; i < domainTags.length; i++) {
-        var option_element = document.createElement('option');
-        option_element.textContent = domainTags[i];
-        option_element.value = domainTags[i];
-        select.appendChild(option_element);
+        add2ListElement(select, domain_tags.values[i].name)
     }
 
     document.getElementById("select_version").style.display = "block";
+}
+
+function add2ListElement(listElement, listItem) {
+    var option_element = document.createElement('option');
+    option_element.textContent = listItem;
+    option_element.value = listItem;
+    listElement.appendChild(option_element);
 }
 
 function startIgranskning() {

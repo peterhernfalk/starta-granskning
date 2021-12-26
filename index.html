@@ -5,7 +5,6 @@
     <title>Starta VITS-granskningstjänst</title>
 
     <script src="javascript/service_logic.js"></script>
-    <!--script src="javascript/communication.js"></script-->
 </head>
 <body>
 <h1>Starta VITS-granskningstjänst</h1>
@@ -16,7 +15,6 @@
 <form id= "domainform" action="" method="GET">
 <div id="select_domain">
     <br><h2>1. Välj tjänstedomän</h2>
-    <!--select id="domain_name_list" onchange="initDomainTagList();" onfocus="initDomainTagList(); this.selectedIndex = -1;"-->
     <select id="domain_name_list" onchange="initDomainTagList();" onfocus="this.selectedIndex = -1;">
     </select>
 </div>
@@ -45,12 +43,6 @@
     document.getElementById("select_version").style.display = "none";
     document.getElementById("start_service").style.display = "none";
 
-    //var repo_listing_page_contents = "";
-    //var domainListPageString = "";
-    //fetchedData = "";
-
-    domainNames = [];
-    domainTags = [];
     domain_tag_dictionary = {};
 
     initDomainNameList();
