@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Starta VITS-granskningstjänst</title>
 
-    <script src="javascript/behaviour.js"></script>
-    <script src="javascript/communication.js"></script>
+    <script src="javascript/service_logic.js"></script>
+    <!--script src="javascript/communication.js"></script-->
 </head>
 <body>
 <h1>Starta VITS-granskningstjänst</h1>
@@ -45,19 +45,15 @@
     document.getElementById("select_version").style.display = "none";
     document.getElementById("start_service").style.display = "none";
 
+    //var repo_listing_page_contents = "";
+    //var domainListPageString = "";
+    //fetchedData = "";
 
-    var repo_listing_page_contents = "";
-    var domainListPageString = "";
     domainNames = [];
-    fetchedData = "";
     domainTags = [];
     domain_tag_dictionary = {};
 
     initDomainNameList();
-    //domainListPageString = initDomainNameList();
-    //console.log("index.html, domainListPageString:\n" + domainListPageString);
-    //console.log("index.html, fetchedData: " + fetchedData + "  " + fetchedData.length);
-    console.log("index.html, domainNames:\n" + domainNames + "  " + domainNames.length);
 </script>
 
 </body>
