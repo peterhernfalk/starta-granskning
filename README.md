@@ -4,7 +4,8 @@
 Denna tjänst är till för att underlätta start av I- eller T-granskningstjänsten. 
 Det åstadkoms främst genom att domännamn och domänversion väljs från listboxar istället för att skrivas in som url-parametrar till granskningstjänsterna.
 
-## Teknisk information om tjänsten
+### Implementationen i korthet
+- Tjänsten är utvecklad i Python som använder Flask för att exponera två endpoints och svara på anrop. De endpoints som exponeras är:
 - Denna tjänst är utvecklad i HTML, Javascript och (snart även) CSS
 - Listboxen med domännamn populeras genom att Javascriptkod hämtar innehållet från rivta-domains på Bitbucket
 - Listboxen med domänversioner populeras genom att Javascriptkod hämtar vald domäns befintliga taggar från domänens repo i Bitbucket
