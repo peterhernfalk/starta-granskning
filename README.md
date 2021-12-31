@@ -22,6 +22,9 @@ Det åstadkoms främst genom att domännamn och domänversion väljs från listb
   - Därefter hämtas en lista i JSON-format med befintliga taggar, vilka sedan populeras i dess comboboxlista
 
 ### Inför överlämning till förvaltning
+- Knapparna som används för att starta I- eller T-granskningstjänsten ska göras större
+- UX-arbete behöver göras för att göra webbgränssnittet mer lättanvänt 
+- Webbgränssnittet behöver även kompletteras med förklarande text som beskriver hur tjänsten ska användas 
 - Koden förenklas och renodlas inför slutleverans
 - Det finns ett antal repos för RIVTA-verktyg på Bitbucket. På sikt bör även detta kodprojekt flyttas dit
 
@@ -52,8 +55,4 @@ vilket inte stöds direkt utan åstadkoms genom att konfigurera tjänsten som en
   - Från lokalt repo
 - Deploy till Heroku-app
   - Deploy sker med Herokus CLI (git push heroku master)
-
-## Restlista vid överlämning till förvaltning
-- Knapparna som används för att starta I- eller T-granskningstjänsten ska göras större
-- UX-arbete behöver göras för att göra webbgränssnittet mer lättanvänt 
-- Webbgränssnittet behöver även kompletteras med förklarande text som beskriver hur tjänsten ska användas 
+  
